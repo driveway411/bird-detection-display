@@ -1,0 +1,10 @@
+{
+  "watch": [
+    "src/backend",
+    "schema.sql"
+  ],
+  "ext": "js,json,sql",
+  "ignore": [
+    "node_modules"
+  ]
+}

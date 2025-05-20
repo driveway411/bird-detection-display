@@ -1,0 +1,24 @@
+{
+  "name": "bird-detection-display",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "nodemon src/backend/server.js",
+    "start": "node src/backend/server.js",
+    "fetch-data": "node src/backend/scripts/fetchDetections.js",
+    "fetch-daily-counts": "node src/backend/scripts/fetchDailyCounts.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "node-cron": "^3.0.3",
+    "node-fetch": "^3.3.2",
+    "qrcode": "^1.5.4"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "type": "module"
+}

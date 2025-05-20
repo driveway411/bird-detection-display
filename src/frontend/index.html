@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bird Detection Display</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+        <img src="https://blogs.massaudubon.org/yourgreatoutdoors/wp-content/uploads/sites/20/2018/10/square-Logo-only.jpg" alt="Mass Audubon Logo">
+        <h1 style="display: inline-block;">Birds at Drumlin Farm</h1>
+    </header>
+    <main>
+        <section id="recent-detections">
+            <div class="detection-grid"></div>
+        </section>
+        <section id="data-table">
+            <h2>Detection Counts Table</h2>
+            <div id="data-table-container"></div>
+        </section>
+
+        <footer>
+            <div class="last-updated">
+                Last refreshed: <span id="timestamp"></span>
+            </div>
+            <div class="display-name"></div>
+            <div id="qr-code"></div>
+        </footer>
+    </main>
+
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>
