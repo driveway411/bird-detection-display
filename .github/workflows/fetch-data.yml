@@ -1,0 +1,31 @@
+name: Fetch Daily Bird Data
+
+on:
+  schedule:
+    # Runs at 2 AM UTC every day (9 PM EST)
+    - cron: '0 2 * * *'
+  # Also allow manual triggers
+  workflow_dispatch:
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Fetch and store detections
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+          BIRDWEATHER_STATION_ID: ${{ secrets.BIRDWEATHER_STATION_ID }}
+        run: |
+          npm run fetch-daily-counts
